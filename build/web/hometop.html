@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Frame</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scroll bars */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .rect {
+            height: 70px; /* Adjusted height */
+            width: 1450px;
+            background: #70a9df;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .rect h5, .rect a {
+            margin: 0;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .rect a:hover {
+            text-decoration: underline;
+        }
+
+        .image-container {
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body bgcolor="White">
+    <div class="container">
+        <div class="image-container">
+            <img src="top.png" class="img-rounded" alt="Cinque Terre" width="1500" height="70">
+        </div>
+        <div class="rect">
+            <h5>Hi...User</h5>
+            <a href="change_pwd.html" target="right"><h5>Change Password</h5></a>
+            <a href="edit_profile.html" target="right"><h5>Edit Profile</h5></a>
+            <a href="logout.html" target="right"><h5>Logout</h5></a>
+        </div>
+    </div>
+</body>
+</html>

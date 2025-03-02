@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COMPLAINTS/SUGGESTIONS</title>
+    <style>
+        /* CSS for horizontal alignment */
+        input[type="radio"] {
+            display: inline-block;
+            margin-right: 10px; /* Adjust as needed */
+        }
+        
+        /* Basic styling for labels and form elements */
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            width: 150px;
+            height: 30px;
+            background-color: rgb(15, 97, 204);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function displayForm() {
+            var type = document.querySelector('input[name="type"]:checked');
+            if (!type) return; // Handle case where no radio button is checked
+
+            var formType = type.value;
+            var formDiv = document.getElementById('form');
+            formDiv.innerHTML = ''; // Clear previous content
+
+            if (formType === "complaint") {
+                formDiv.innerHTML = `
+                    <form action="Complaints" method="post" onsubmit="submitComplaint(); return false;">
+                        <label for="complaintDate">Date:</label>
+                        <input type="date" id="complaintDate" name="date" required><br>
+                        <label for="complaintText">Complaint (describe in more than 250 words):</label><br>
+                        <textarea id="complaintText" name="text" rows="4" cols="50" required></textarea><br>
+                        <button type="submit">Submit</button>
+                        <input type="hidden" name="type" value="complaint"> <!-- Hidden input to pass type -->
+                    </form>
+                `;
+            } else if (formType === "suggestion") {
+                formDiv.innerHTML = `
+                    <form action="Complaints" method="post" onsubmit="submitSuggestion(); return false;">
+                        <label for="suggestionDate">Date:</label>
+                        <input type="date" id="suggestionDate" name="date" required><br>
+                        <label for="suggestionText">Suggestion (describe in more than 250 words):</label><br>
+                        <textarea id="suggestionText" name="text" rows="4" cols="50" required></textarea><br>
+                        <button type="submit">Submit</button>
+                        <input type="hidden" name="type" value="suggestion"> <!-- Hidden input to pass type -->
+                    </form>
+                `;
+            }
+        }
+
+        function clearForm() {
+            // Clear form fields after successful submission
+            document.getElementById('complaintDate').value = '';
+            document.getElementById('complaintText').value = '';
+            document.getElementById('suggestionDate').value = '';
+            document.getElementById('suggestionText').value = '';
+            document.querySelector('input[name="type"]:checked').checked = false;
+            document.getElementById('form').innerHTML = ''; // Clear form content
+        }
+
+        function submitComplaint() {
+            var complaintDate = document.getElementById('complaintDate').value;
+            var complaintText = document.getElementById('complaintText').value;
+            
+            // Validate if fields are filled (client-side validation)
+            if (!complaintDate || !complaintText) {
+                alert("Please fill in all fields for the complaint.");
+                return;
+            }
+
+            // For demonstration, alert and clear form
+            alert("Complaint successfully submitted!");
+            clearForm();
+        }
+
+        function submitSuggestion() {
+            var suggestionDate = document.getElementById('suggestionDate').value;
+            var suggestionText = document.getElementById('suggestionText').value;
+            
+            // Validate if fields are filled (client-side validation)
+            if (!suggestionDate || !suggestionText) {
+                alert("Please fill in all fields for the suggestion.");
+                return;
+            }
+
+            // For demonstration, alert and clear form
+            alert("Suggestion successfully submitted!");
+            clearForm();
+        }
+    </script>
+</head>
+<body>
+    <h3 style="color: rgb(7, 48, 100);">COMPLAINTS/SUGGESTIONS</h3>
+    <h2>---------------------------------------------------------------------------------------------------------------------------------------------------------</h2>
+    <form onsubmit="return false;">
+        <input type="radio" name="type" value="complaint" id="complaint" onclick="displayForm()"> Complaint
+        <input type="radio" name="type" value="suggestion" id="suggestion" onclick="displayForm()"> Suggestion
+        <br><br>
+    </form>
+    <div id="form"></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Top Frame</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            flex: 0 0 30%; /* 30% height */
+        }
+
+        .content {
+            flex: 1; /* Take remaining space */
+            overflow-y: auto; /* Enable scrolling if needed */
+            background-color: #F0F0F0;
+        }
+
+        .marquee-container {
+            text-align: center;
+            background-color: white; /* White background */
+            padding: 10px; /* Add some padding */
+        }
+
+        .marquee-container h4 {
+            color: rgb(67, 80, 218);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="top.png" class="img-rounded" alt="Cinque Terre" width="1500" height="100">
+            <img src="top1.png" class="img-rounded" alt="Cinque Terre" width="300" height="100">
+            <img src="top2.jpg" class="img-rounded" alt="Cinque Terre" width="1100" height="100">
+        </div>
+        <div class="content">
+            <div class="marquee-container">
+                <marquee>
+                    <h4>*** Welcome to BVRITH & SVES Family***</h4>
+                </marquee>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

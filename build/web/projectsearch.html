@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PROJECT SEARCH</title>
+    <style>
+        /* CSS for horizontal alignment */
+        .radio-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .radio-container input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .search-input {
+            width: 200px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* CSS for the rectangular button */
+        .button {
+            width: 150px;
+            height: 30px;
+            background-color: rgb(15, 97, 204);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* CSS for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    <script>
+        function displayForm(radio) {
+            var type = radio.value;
+            var formDiv = document.getElementById("form");
+
+            // Clear previous form content
+            formDiv.innerHTML = "";
+
+            // Create input form based on selected type
+            switch (type) {
+                // Adjust cases based on your specific project search criteria
+                case "TITLE":
+                case "LANGUAGE":
+                case "FRONTEND":
+                case "BACKEND":
+                    formDiv.innerHTML = `<input type="text" id="searchInput" class="search-input" placeholder="Enter ${type}">`;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function searchProjects() {
+            var type = document.querySelector('input[name="type"]:checked').value;
+            var searchTerm = document.getElementById("searchInput").value.trim();
+
+            // Perform AJAX call to servlet for search
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "ProjectSearchServlet?type=" + type + "&searchTerm=" + searchTerm, true);
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    document.getElementById("results").innerHTML = xhr.responseText;
+                } else {
+                    alert("Error fetching data. Please try again later.");
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <h3 style="color: rgb(7, 48, 100);">PROJECT SEARCH</h3>
+    <h2>---------------------------------------------------------------------------------------------------------------------------------------------------------</h2>
+
+    <form action="ProjectSearchServlet" method="post" onsubmit="event.preventDefault(); searchProjects();">
+        <div class="radio-container">
+            <input type="radio" name="type" value="TITLE" id="TITLE" onclick="displayForm(this)"> <h4>TITLE</h4>
+            <input type="radio" name="type" value="LANGUAGE" id="LANGUAGE" onclick="displayForm(this)"> <h4>LANGUAGE</h4>
+            <input type="radio" name="type" value="FRONTEND" id="FRONTEND" onclick="displayForm(this)"> <h4>FRONTEND</h4>
+            <input type="radio" name="type" value="BACKEND" id="BACKEND" onclick="displayForm(this)"> <h4>BACKEND</h4>
+        </div>
+        <br><br>
+        <div id="form"></div>
+        <br>
+        <button type="submit" class="button">Search</button>
+    </form>
+
+    <div id="results"></div>
+</body>
+</html>

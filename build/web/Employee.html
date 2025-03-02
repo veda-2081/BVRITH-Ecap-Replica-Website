@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .rect {
+            height: 70px;
+            width: 204px;
+            background: #870087;
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        h5 {
+            position: absolute;
+            left: 50%;
+            transform: translate(-10%, 200%);
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <div class="rect">
+            <h5>Employee Login</h5>
+        </div>
+    </div>
+    <div class="container">
+        <div id="loginForm">
+            <form action="FacultyLogin" method="post" onsubmit="return validateForm()">
+                <div class="data">
+                    <label class="orange-label" for="id">Faculty Id:</label>
+                    <input type="text" name="id" id="id" required>
+                </div>
+                <div class="data">
+                    <label class="orange-label" for="password">Password:</label>
+                    <input type="password" name="password" id="password" required>
+                </div><br>
+                <div class="btn1">
+                    <button type="submit">Login</button>
+                </div>
+                <img src="e.png" class="img-rounded img-position" alt="Cinque Terre" width="70" height="70">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

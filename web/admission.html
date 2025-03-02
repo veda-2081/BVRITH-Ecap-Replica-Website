@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admission Form</title>
+    <style>
+        h3 {
+            text-align: center;
+        }
+        .rect {
+            height: 45px;
+            width: 1450px;
+            background: #70a9df;
+            color: #ffffff;
+            position: relative;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .rect h6, .rect a {
+            margin: 0;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .rect a:hover {
+            text-decoration: underline;
+        }
+        h5 {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 30%);
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            background-color: #70a9df;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #70a9df;
+        }
+        .required::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <img src="top.png" alt="HTML5 Icon" width="1450" height="100">
+    <div class="rect">
+        <h5 style="color: rgb(0, 0, 0);">Admission Form</h5>
+    </div>
+    <form action="AdmissionServlet1" method="post">
+        
+        <label for="username" class="required">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password" class="required">Password</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label for="studentName" class="required">Student Name</label>
+        <input type="text" id="studentName" name="studentName" required>
+
+        <label for="intermediateRegNo" class="required">Intermediate Register No</label>
+        <input type="text" id="intermediateRegNo" name="intermediateRegNo" required>
+
+        <label for="eamcetrank" class="required">Rank</label>
+        <input type="text" id="eamcetrank" name="eamcetrank" required>
+
+        <label for="entranceType" class="required">Entrance Type</label>
+        <select id="entranceType" name="entranceType" required>
+            <option value="">Entrance Type</option>
+            <option value="EAMCET">EAMCET</option>
+            <option value="ECET">ECET</option>
+            <option value="GATE">GATE</option>
+            <option value="ICET">ICET</option>
+            <option value="PGECET">PGECET</option>
+            <option value="CEEP">CEEP</option>
+            <option value="Others">Others</option>
+        </select>
+
+        <label for="seatType" class="required">Seat Type</label>
+        <select id="seatType" name="seatType" required>
+            <option value="">Seat Type</option>
+            <option value="B-Category">B-Category</option>
+            <option value="Convener">Convener</option>
+            <option value="EWS">EWS</option>
+            <option value="Spot">Spot</option>
+        </select>
+
+        <label for="course" class="required">Course</label>
+        <select id="course" name="course" required>
+            <option value="">-Select-</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
+        </select>
+
+        <label for="branch" class="required">Branch</label>
+        <select id="branch" name="branch" required>
+            <option value="">-Select-</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+        </select>
+
+        <label for="mobileNo">Mobile.No</label>
+        <input type="text" id="mobileNo" name="mobileNo">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email">
+
+        <label for="parentName" class="required">Parent Name</label>
+        <input type="text" id="parentName" name="parentName" required>
+
+        <label for="parentMobileNo" class="required">Parent Mobile.No</label>
+        <input type="text" id="parentMobileNo" name="parentMobileNo" required>
+
+        <label for="address">Address</label>
+        <label for="doorNo">Door.No</label>
+        <input type="text" id="doorNo" name="doorNo">
+
+        <label for="street">Street</label>
+        <input type="text" id="street" name="street">
+
+        <label for="state" class="required">State</label>
+        <select id="state" name="state" required>
+            <option value="">-Select-</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Maharastra">Maharastra</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Telangana">Telangana</option>
+        </select>
+
+        <label for="district" class="required">District</label>
+        <select id="district" name="district" required>
+            <option value="">-Select-</option>
+            <option value="Adilabad">Adilabad</option>
+            <option value="Bhadradri Kothagudem">Bhadradri Kothagudem</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Jagtial">Jagtial</option>
+            <option value="Jangaon">Jangaon</option>
+            <option value="Jayashankar Bhupalpally">Jayashankar Bhupalpally</option>
+            <option value="Jogulamba Gadwal">Jogulamba Gadwal</option>
+            <option value="Kamareddy">Kamareddy</option>
+            <option value="Karimnagar">Karimnagar</option>
+            <option value="Khammam">Khammam</option>
+            <option value="Komaram Bheem Asifabad">Komaram Bheem Asifabad</option>
+            <option value="Mahabubabad">Mahabubabad</option>
+            <option value="Mahabubnagar">Mahabubnagar</option>
+            <option value="Mancherial">Mancherial</option>
+            <option value="Medak">Medak</option>
+            <option value="Medchal-Malkajgiri">Medchal-Malkajgiri</option>
+            <option value="Mulugu">Mulugu</option>
+            <option value="Nagarkurnool">Nagarkurnool</option>
+            <option value="Nalgonda">Nalgonda</option>
+            <option value="Narayanpet">Narayanpet</option>
+            <option value="Nirmal">Nirmal</option>
+            <option value="Nizamabad">Nizamabad</option>
+            <option value="Peddapalli">Peddapalli</option>
+            <option value="Rajanna Sircilla">Rajanna Sircilla</option>
+            <option value="Ranga Reddy">Ranga Reddy</option>
+            <option value="Sangareddy">Sangareddy</option>
+            <option value="Siddipet">Siddipet</option>
+            <option value="Suryapet">Suryapet</option>
+            <option value="Vikarabad">Vikarabad</option>
+            <option value="Wanaparthy">Wanaparthy</option>
+            <option value="Warangal Rural">Warangal Rural</option>
+            <option value="Warangal Urban">Warangal Urban</option>
+            <option value="Yadadri Bhuvanagiri">Yadadri Bhuvanagiri</option>
+        </select>
+
+        <label for="mandal" class="required">Mandal</label>
+        <select id="mandal" name="mandal" required>
+            <option value="">-Select-</option>
+            <option value="Adilabad">Adilabad</option>
+            <option value="Asifabad">Asifabad</option>
+            <option value="Banswada">Banswada</option>
+            <option value="Bhadrachalam">Bhadrachalam</option>
+            <option value="Bhainsa">Bhainsa</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="Boath">Boath</option>
+            <option value="Chevella">Chevella</option>
+            <option value="Chityal">Chityal</option>
+            <option value="Devarakonda">Devarakonda</option>
+            <option value="Dornakal">Dornakal</option>
+            <option value="Gadwal">Gadwal</option>
+            <option value="Husnabad">Husnabad</option>
+            <option value="Jagtial">Jagtial</option>
+            <option value="Jangaon">Jangaon</option>
+            <option value="Kamalapur">Kamalapur</option>
+            <option value="Karimnagar">Karimnagar</option>
+            <option value="Khammam">Khammam</option>
+            <option value="Kodad">Kodad</option>
+            <option value="Mahabubabad">Mahabubabad</option>
+            <option value="Mahabubnagar">Mahabubnagar</option>
+            <option value="Mancherial">Mancherial</option>
+            <option value="Mandamarri">Mandamarri</option>
+            <option value="Medak">Medak</option>
+            <option value="Medchal">Medchal</option>
+            <option value="Mulugu">Mulugu</option>
+            <option value="Nagarkurnool">Nagarkurnool</option>
+            <option value="Nalgonda">Nalgonda</option>
+            <option value="Narayanpet">Narayanpet</option>
+            <option value="Nirmal">Nirmal</option>
+            <option value="Nizamabad">Nizamabad</option>
+            <option value="Peddapalli">Peddapalli</option>
+            <option value="Sangareddy">Sangareddy</option>
+            <option value="Siddipet">Siddipet</option>
+            <option value="Suryapet">Suryapet</option>
+            <option value="Vikarabad">Vikarabad</option>
+            <option value="Wanaparthy">Wanaparthy</option>
+            <option value="Warangal">Warangal</option>
+            <option value="Yellandu">Yellandu</option>
+        </select>
+
+        <label for="village" class="required">Village</label>
+        <select id="village" name="village" required>
+            <option value="">-Select-</option>
+            <option value="Abdullapurmet">Abdullapurmet</option>
+            <option value="Adavimallela">Adavimallela</option>
+            <option value="Adiviravulapally">Adiviravulapally</option>
+            <option value="Ailapur">Ailapur</option>
+            <option value="Ainapur">Ainapur</option>
+            <option value="Ajmirgunj">Ajmirgunj</option>
+            <option value="Akanapet">Akanapet</option>
+            <option value="Alampur">Alampur</option>
+            <option value="Allapur">Allapur</option>
+            <option value="Ammapur">Ammapur</option>
+            <option value="Amrabad">Amrabad</option>
+            <option value="Anantharam">Anantharam</option>
+            <option value="Andugulapally">Andugulapally</option>
+            <option value="Anumula">Anumula</option>
+            <option value="Armoor">Armoor</option>
+            <option value="Asifabad">Asifabad</option>
+            <option value="Athmakur">Athmakur</option>
+            <option value="Aurangabad">Aurangabad</option>
+            <option value="Bachannapet">Bachannapet</option>
+            <option value="Bahadurpally">Bahadurpally</option>
+            <option value="Balmoor">Balmoor</option>
+            <option value="Banswada">Banswada</option>
+            <option value="Baswapur">Baswapur</option>
+            <option value="Bazarhathnoor">Bazarhathnoor</option>
+            <option value="Beeramguda">Beeramguda</option>
+            <option value="Bhadrachalam">Bhadrachalam</option>
+            <option value="Bhainsa">Bhainsa</option>
+            <option value="Bhattupally">Bhattupally</option>
+            <option value="Bhiknoor">Bhiknoor</option>
+            <option value="Bhimaram">Bhimaram</option>
+            <option value="Bhongir">Bhongir</option>
+            <option value="Bibipet">Bibipet</option>
+            <option value="Boath">Boath</option>
+            <option value="Bodan">Bodan</option>
+            <option value="Chandur">Chandur</option>
+            <option value="Chityal">Chityal</option>
+            <option value="Choutuppal">Choutuppal</option>
+            <option value="Dandepally">Dandepally</option>
+            <option value="Dichpally">Dichpally</option>
+            <option value="Dornakal">Dornakal</option>
+            <option value="Gadwal">Gadwal</option>
+            <option value="Ghanpur">Ghanpur</option>
+            <option value="Hasanparthy">Hasanparthy</option>
+            <option value="Husnabad">Husnabad</option>
+            <option value="Ibrahimpatnam">Ibrahimpatnam</option>
+            <option value="Jadcherla">Jadcherla</option>
+            <option value="Jagtial">Jagtial</option>
+            <option value="Jangaon">Jangaon</option>
+            <option value="Kalwakurthy">Kalwakurthy</option>
+            <option value="Kamalapur">Kamalapur</option>
+            <option value="Kamareddy">Kamareddy</option>
+            <option value="Karimnagar">Karimnagar</option>
+            <option value="Khammam">Khammam</option>
+            <option value="Kodad">Kodad</option>
+            <option value="Korutla">Korutla</option>
+            <option value="Mahabubabad">Mahabubabad</option>
+            <option value="Mahabubnagar">Mahabubnagar</option>
+            <option value="Mancherial">Mancherial</option>
+            <option value="Mandamarri">Mandamarri</option>
+            <option value="Medak">Medak</option>
+            <option value="Medchal">Medchal</option>
+            <option value="Mulugu">Mulugu</option>
+            <option value="Nagarkurnool">Nagarkurnool</option>
+            <option value="Nalgonda">Nalgonda</option>
+            <option value="Narayanpet">Narayanpet</option>
+            <option value="Nirmal">Nirmal</option>
+            <option value="Nizamabad">Nizamabad</option>
+            <option value="Peddapalli">Peddapalli</option>
+            <option value="Sangareddy">Sangareddy</option>
+            <option value="Siddipet">Siddipet</option>
+            <option value="Suryapet">Suryapet</option>
+            <option value="Vikarabad">Vikarabad</option>
+            <option value="Wanaparthy">Wanaparthy</option>
+            <option value="Warangal">Warangal</option>
+            <option value="Yellandu">Yellandu</option>
+        </select>
+
+        <label for="pin">Pin</label>
+        <input type="text" id="pin" name="pin">
+
+        <label for="villageNotInList">Enter if village not in list</label>
+        <input type="text" id="villageNotInList" name="villageNotInList">
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

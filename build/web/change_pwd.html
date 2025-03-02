@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CHANGE PWD</title>
+    <style>
+        .button {
+            width: 150px;
+            height: 30px;
+            background-color: #70a9df;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h3,h2{
+            text-align:left;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .message {
+            color: rgb(52, 125, 234);
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <h3 style="color: rgb(7, 48, 100);">CHANGE PASSWORD</h3>
+    <h2>-----------------------------------------------------------------------------------------------------------------------------------------------------------</h2>
+
+    <form action="Changepwd" method="post" onsubmit="return checkForm()">
+        <center>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+
+            <label for="old_pwd">Old Password:</label>
+            <input type="password" id="old_pwd" name="old_pwd" required>
+            <br><br>
+
+            <label for="new_pwd">New Password:</label>
+            <input type="password" id="new_pwd" name="new_pwd" required>
+            <br><br>
+
+            <button type="submit" class="button">Change Password</button>
+        </center>
+    </form>
+</div>
+
+<script>
+    function checkForm() {
+        // You can add additional validation if needed
+        return true;
+    }
+</script>
+
+</body>
+</html>

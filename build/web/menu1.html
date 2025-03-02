@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navbar Frame</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scroll bars */
+        }
+
+        .rect {
+            height: 30px; /* Reduced height */
+            width: 200px; /* Reduced width */
+            background: #348bdb;
+            color: #ffffff;
+            text-align: center; /* Center alignment */
+            position: relative;
+            margin-top: 2px; /* Adjusted margin top */
+        }
+
+        h2 {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -30%); /* Center text vertically */
+            font-size: 14px; /* Increased font size */
+        }
+
+        .button {
+            display: block;
+            width: 100%; /* Adjusted width to fill the container */
+            padding: 7px 0; /* Reduced padding */
+            margin: 2px 0; /* Reduced margin */
+            background: #ffffff;
+            color: #348bdb;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 12px; /* Reduced font size */
+            border: 1px solid #d3d3d3; /* Grey border */
+        }
+
+        .button:hover {
+            background: #f0f0f0; /* Light grey background on hover */
+        }
+
+        .col {
+            text-align: center; /* Center align the buttons */
+            margin: auto; /* Center the container */
+            width: 100%; /* Adjusted width */
+        }
+    </style>
+</head>
+<body bgcolor="White">
+<div align="center">
+    <div class="rect">
+        <h2>MENU</h2>
+    </div>
+</div>
+<section>
+  <div class="col">
+    <div class="row-sm-4"><button class="button" onclick="window.open('academicregister1.html', 'right')">ACADEMIC REGISTER</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('academiccalender.html', 'right')">ACADEMIC CALENDAR</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('assignmentsreport.html', 'right')">ASSIGNMENTS REPORT</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('attendence.jsp', 'right')">ATTENDANCE</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('backlogs.jsp', 'right')">BACKLOGS</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('booksearch.html', 'right')">BOOK SEARCH</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('complaint.html', 'right')">COMPLAINT/SUGGESTION</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('feedetails1.html', 'right')">FEE DETAILS</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('feedback.html', 'right')">FEEDBACK</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('hostel.html', 'right')">HOSTEL/TRANSPORT REQUEST</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('library.jsp', 'right')">LIBRARY BOOKS</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('onlinepayments.html', 'right')">ONLINE PAYMENT</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('onlinetransactions1.html', 'right')">ONLINE TRANSACTIONS</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('studentprofile1.jsp', 'right')">PROFILE</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('projectsearch.html', 'right')">PROJECT SEARCH</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('resources.html', 'right')">RESOURCES</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('outings.html', 'right')">FACULTY PERMISSION SLIP</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('topicscovered.html', 'right')">TOPICS COVERED</button></div>
+    <div class="row-sm-4"><button class="button" onclick="window.open('timetable.html', 'right')">TIME TABLE</button></div>
+  </div>
+</section>
+</body>
+</html>

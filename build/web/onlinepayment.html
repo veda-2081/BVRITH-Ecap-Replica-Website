@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Payments</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 100px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    h3 {
+        color: #073064;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .payment-methods {
+        display: flex;
+        flex-direction: column; /* Arrange buttons vertically */
+        align-items: center; /* Center align buttons */
+    }
+    .payment-option {
+        margin-bottom: 20px;
+        text-align: center;
+        width: 50%; /* Make each payment option full width */
+    }
+    .payment-option button {
+        width: 50%; /* Make buttons full width of parent container */
+        background-color: #70a9df; /* Light blue background */
+        color: #073064; /* Dark blue text */
+        padding: 15px 0; /* Larger padding vertically */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease; /* Smooth background color transition */
+    }
+    .payment-option button:hover {
+        background-color: #70a9df; /* Lighter shade of blue on hover */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h3>Online Payments</h3>
+    <div class="payment-methods">
+        <div class="payment-option">
+            <button onclick="window.location.href='UPIPayment.html'">Pay with UPI</button>
+        </div>
+        <div class="payment-option">
+            <button onclick="window.location.href='DebitCardPayment.html'">Pay with Debit Card</button>
+        </div>
+        <div class="payment-option">
+            <button onclick="window.location.href='CreditCardPayment.html'">Pay with Credit Card</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

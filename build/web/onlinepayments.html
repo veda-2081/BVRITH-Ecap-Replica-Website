@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h3{
+        text-align:left;
+    }
+img {
+  width: 50%;
+  height: 50%;
+}
+.btn {
+        background-color: #70a9df;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+    }
+</style>
+<script>
+function openPaymentWindow() {
+    // Define the URL and window properties
+    var url = "onlinepayment.html";
+    var width = 700;
+    var height = 500;
+    var left = (screen.width - width) / 2;
+    var top = (screen.height - height) / 2;
+
+    // Open the window with specified dimensions and position
+    window.open(url, "_blank", "width=" + width + ", height=" + height + ", left=" + left + ", top=" + top);
+}
+</script>
+</head>
+<body>
+
+<h3 style="color: rgb(7, 48, 100);">ONLINE PAYMENTS</h3>
+<h2>---------------------------------------------------------------------------------------------------------------------------------------------------------</h2>
+
+<button onclick="openPaymentWindow()" class="btn">Proceed to Online Payment</button>
+</body>
+</html>

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    height: 50vh;
+    width: 100%;
+    background: #F0F0F0;
+}
+
+.container,
+.container-fluid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    width: 204px;
+    padding: 10px; /* Adjusted padding from 15px to 10px */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 3px 6px -1px, rgba(0, 0, 0, 0.3) 0px 1.5px 3.5px -1.5px;
+}
+
+.container .text {
+    font-size: 17.5px;
+    font-weight: 400;
+    text-align: center;
+    color: #5199E4;
+}
+
+.container form {
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align form items to the right */
+}
+
+.container form .data {
+    height: 22.5px;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.orange-label {
+    color: orange;
+}
+
+.brown-label {
+    color: brown;
+}
+
+.img-position {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+form .data label {
+    font-size: 9px;
+    margin-right: 5px;
+}
+
+form .data input {
+    height: 100%;
+    width: 70%;
+    padding-left: 5px;
+    font-size: 8.5px;
+    border: 1px solid silver;
+}
+
+form .data input:focus {
+    border-color: #5199E4;
+    border-bottom-width: 1px;
+}
+
+form .forgot-pass {
+    margin-top: -4px;
+}
+
+form .forgot-pass a {
+    color: #5199E4;
+    text-decoration: none;
+}
+
+form .forgot-pass a:hover {
+    text-decoration: underline;
+}
+
+form .btn {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between; /* Align buttons to the right */
+    width: 100%;
+}
+
+form .btn button {
+    height: 100%;
+    width: 90%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+form .btn1 button {
+    background: #ff00ff;
+}
+
+form .btn2 button {
+    background: #f9a46c;
+}
+
+form .btn3 button {
+    background: #82bbf5;
+}
+
+form .signup-link {
+    text-align: center;
+}
+
+form .signup-link a {
+    color: #5199E4;
+    text-decoration: none;
+}
+
+form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+.container-fluid {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    height: 45px; /* Increased height to accommodate padding and border */
+    background: white;
+    padding: 10px; /* Added padding to create space around the content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #4d82d2; /* Added blue border around the menu */
+    border-radius: 5px; /* Optional: Add rounded corners to the border */
+}
+
+nav .logo {
+    font-weight: 500;
+    font-size: 9px;
+    color: #34495e;
+}
+
+nav .menu a {
+    margin: 5px 5px;
+    text-decoration: none;
+    font-size: 9px;
+    color: #5199E4;
+}
+
+nav .menu a:hover {
+    text-decoration: underline;
+}
+
+.container-fluid h2,
+.container-fluid h3 {
+    font-weight: 400;
+    font-size: 12.5px;
+}
+
+.container-fluid img {
+    width: 100px;
+}
+
+.LeftMenuHead {
+    background-image: url(../NewImages/navbg_dn.gif);
+    background-color: #4d82d2;
+    font-weight: bolder;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    height: 20px;
+    text-transform: uppercase;
+    color: White;
+}

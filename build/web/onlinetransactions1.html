@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ON-LINE RECEIPTS</title>
+    <style>
+        /* CSS for horizontal alignment */
+        input[type="radio"] {
+            display: inline-block;
+            margin-right: 10px; /* Adjust as needed */
+        }
+
+        /* CSS for the rectangular button */
+        .button {
+            width: 150px;
+            height: 30px;
+            background-color: #70a9df;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* CSS for center-aligned container */
+        .rect {
+            border: 1px solid #000;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .fee-details {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+        }
+        .fee-details h4 {
+            margin: 0 10px 0 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+            overflow: hidden; /* Hide overflow */
+        }
+
+        .image-container img {
+            max-width: 50%; /* Ensure image fits container */
+            height: auto;
+        }
+    </style>
+    <script>
+        function displayForm() {
+            var formDiv = document.getElementById('form');
+            var type = document.querySelector('input[name="type"]:checked');
+            var fromDate = document.getElementById('dateRangeFrom').value;
+            var toDate = document.getElementById('dateRangeTo').value;
+
+            // Check if both radio button and date range are selected
+            if (type && type.value && fromDate && toDate) {
+                if (type.value === "collegeFee") {
+                    formDiv.innerHTML = `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>SL.NO</th>
+                                    <th>ROLL.NO</th>
+                                    <th>STUDENT NAME</th>
+                                    <th>REF.NO</th>
+                                    <th>SBI REF.NO</th>
+                                    <th>PAYMENT ON</th>
+                                    <th>FEE TYPE</th>
+                                    <th>AMOUNT</th>
+                                    <th>STATUS</th>
+                                    <th>RECEIPT.NO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL96742</td>
+                                    <td>IGAPZPVDC8</td>
+                                    <td>06/08/2023 20:04:00</td>
+                                    <td>Exam Fee(II Sem)</td>
+                                    <td>800</td>
+                                    <td>Success <button class="button" onclick="checkStatus(1)">Check Status</button></td>
+                                    <td>40746</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL90426</td>
+                                    <td>IGAPCVSLJ3</td>
+                                    <td>11/02/2023 10:11:00</td>
+                                    <td>Exam Fee</td>
+                                    <td>800</td>
+                                    <td>Success <button class="button" onclick="checkStatus(2)">Check Status</button></td>
+                                    <td>37401</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL85049</td>
+                                    <td>IGAOURDPC8</td>
+                                    <td>14/12/2022 13:28:00</td>
+                                    <td>Transport</td>
+                                    <td>30000</td>
+                                    <td>Success <button class="button" onclick="checkStatus(3)">Check Status</button></td>
+                                    <td>34514</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL85046</td>
+                                    <td></td>
+                                    <td>14/12/2022 13:26:00</td>
+                                    <td>Transport</td>
+                                    <td>30000</td>
+                                    <td>Failed</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL84703</td>
+                                    <td></td>
+                                    <td>13/12/2022 20:25:00</td>
+                                    <td>Transport</td>
+                                    <td>30000</td>
+                                    <td>Failed</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL84700</td>
+                                    <td></td>
+                                    <td>13/12/2022 20:20:00</td>
+                                    <td>Transport</td>
+                                    <td>30000</td>
+                                    <td>Failed</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL81607</td>
+                                    <td>CPACFTQFZ2</td>
+                                    <td>21/11/2022 12:54:00</td>
+                                    <td>Tuition Fee</td>
+                                    <td>30000</td>
+                                    <td>Success <button class="button" onclick="checkStatus(7)">Check Status</button></td>
+                                    <td>32984</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL81606</td>
+                                    <td></td>
+                                    <td>21/11/2022 12:52:00</td>
+                                    <td>Tuition Fee</td>
+                                    <td>30000</td>
+                                    <td>Failed</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL81576</td>
+                                    <td></td>
+                                    <td>20/11/2022 12:48:00</td>
+                                    <td>Tuition Fee</td>
+                                    <td>30000</td>
+                                    <td>Failed</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>22WH1A05D5</td>
+                                    <td>GADDIPATI VEDASRI LAKSHMI</td>
+                                    <td>BVRIL81555</td>
+                                    <td></td>
+                                    <td>19/11/2022 13:29:00</td>
+                                    <td>Tuition Fee</td>
+                                    <td>30000</td>
+                                    <td>Failed</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    `;
+                } else if (type.value === "examFee") {
+                    formDiv.innerHTML = "<p>No data found</p>";
+                }
+            } else {
+                alert('Please fill in all details: Fee Type and Date Range');
+            }
+        }
+
+        function checkStatus(id) {
+            window.location.href='receipt.html';
+        }
+    </script>
+</head>
+<body>
+    <h3 style="color: rgb(7, 48, 100);">ON-LINE RECEIPTS</h3>
+    <h2>---------------------------------------------------------------------------------------------------------------------------------------------------------</h2>
+    <form onsubmit="return false;">
+        <label for="dateRangeFrom">Date Range:</label>
+        <input type="date" id="dateRangeFrom" name="dateRangeFrom">
+        <label for="dateRangeTo">To:</label>
+        <input type="date" id="dateRangeTo" name="dateRangeTo"><br><br>
+        <div class="fee-details">
+            <h6>FEE DETAILS</h6>
+            <input type="radio" name="type" value="collegeFee" id="collegeFee"> <h6>College Fee</h6>
+            <input type="radio" name="type" value="examFee" id="examFee"> <h6>Exam Fee</h6>
+        </div>
+        <br><br>
+        <button type="button" class="button" onclick="displayForm()">Show</button>
+    </form>
+    <div id="form"></div>
+</body>
+</html>

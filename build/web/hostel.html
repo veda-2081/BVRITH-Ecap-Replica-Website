@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hostel/Transport Registration Request</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        h3 {
+            color: rgb(7, 48, 100);
+        }
+        input[type="submit"] {
+            display: block;
+            padding: 10px 20px;
+            background-color: #70a9df; /* Background color for the button */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #5c92ba; /* Darker shade of blue for hover effect */
+        }
+        /* CSS for horizontal alignment */
+        input[type="radio"] {
+            display: inline-block;
+            margin-right: 10px;
+            /* Adjust as needed */
+        }
+        /* CSS for displaying details */
+        #details {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        #details p {
+            margin: 5px 0;
+        }
+        /* CSS for request pending status */
+        #requestStatus {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function showOptions() {
+            var hostelOptions = document.getElementById("hostelOptions");
+            var transportOptions = document.getElementById("transportOptions");
+            var hostelRadio = document.getElementById("hostelRadio");
+            var transportRadio = document.getElementById("transportRadio");
+
+            if (hostelRadio.checked) {
+                hostelOptions.style.display = "block";
+                transportOptions.style.display = "none";
+            } else if (transportRadio.checked) {
+                transportOptions.style.display = "block";
+                hostelOptions.style.display = "none";
+            }
+        }
+
+        function submitRequest(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var registrationType = document.querySelector('input[name="registrationType"]:checked').value;
+
+            // Get details based on registration type
+            var detailsDiv = document.getElementById('details');
+            var detailsHTML = '';
+
+            if (registrationType === 'Hostel') {
+                var roomType = document.getElementById('roomType').value;
+                var sharingMembers = document.getElementById('sharingMembers').value;
+                var requiredForHostel = document.getElementById('requiredForHostel').value;
+
+                detailsHTML = `
+                    <div id="requestStatus">Request Pending</div>
+                    <p><strong>Registration Type:</strong> ${registrationType}</p>
+                    <p><strong>Room Type:</strong> ${roomType}</p>
+                    <p><strong>Sharing Members:</strong> ${sharingMembers}</p>
+                    <p><strong>Required For (Hostel):</strong> ${requiredForHostel}</p>
+                `;
+            } else if (registrationType === 'Transport') {
+                var boardingPoint = document.getElementById('boardingPoint').value;
+                var requiredForTransport = document.getElementById('requiredForTransport').value;
+
+                detailsHTML = `
+                    <div id="requestStatus">Request Pending</div>
+                    <p><strong>Registration Type:</strong> ${registrationType}</p>
+                    <p><strong>Boarding Point (Transport):</strong> ${boardingPoint}</p>
+                    <p><strong>Required For (Transport):</strong> ${requiredForTransport}</p>
+                `;
+            }
+
+            // Display details and handle visibility
+            detailsDiv.innerHTML = detailsHTML;
+            detailsDiv.classList.remove('hidden');
+            document.getElementById('registrationForm').style.display = 'none';
+            document.querySelector('h2').insertAdjacentElement('afterend', detailsDiv);
+
+            // Hide "Request Pending" status after a delay (e.g., 5 seconds)
+            setTimeout(function () {
+                var requestStatus = document.getElementById('requestStatus');
+                if (requestStatus) {
+                    requestStatus.style.display = 'none';
+                    detailsDiv.innerHTML = ''; // Clear details after hiding request status
+                    document.getElementById('registrationForm').style.display = 'block'; // Show the form again
+                }
+            }, 5000000); // Display details for 5 seconds (5000 milliseconds)
+        }
+    </script>
+</head>
+<body>
+
+<h3>HOSTEL/TRANSPORT REGISTRATION REQUEST</h3>
+<h2>---------------------------------------------------------------------------------------------------------------------------------------------------------</h2>
+
+<div class="form-container">
+    <form id="registrationForm">
+        <input type="radio" id="hostelRadio" name="registrationType" value="Hostel" onclick="showOptions()">
+        <label for="Hostel">Hostel</label><br>
+        <input type="radio" id="transportRadio" name="registrationType" value="Transport" onclick="showOptions()">
+        <label for="Transport">Transport</label><br>
+
+        <div id="hostelOptions" style="display:none;">
+            <label for="roomType">Room Type:</label>
+            <select name="roomType" id="roomType">
+                <option value="Room Type-">Select</option>
+                <option value="A/C">A/C</option>
+                <option value="Non A/C">Non A/C</option>
+            </select><br>
+
+            <label for="sharingMembers">Sharing Members:</label>
+            <select name="sharingMembers" id="sharingMembers">
+                <option value="-Select-">-Select-</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br>
+
+            <label for="requiredForHostel">Required for (Hostel):</label>
+            <select name="requiredForHostel" id="requiredForHostel">
+                <option value="-9 months-">-9 months-</option>
+                <option value="6 months">6 months</option>
+                <option value="3 months">3 months</option>
+            </select><br>
+        </div>
+
+        <div id="transportOptions" style="display:none;">
+            <label for="boardingPoint">Boarding Point (Transport):</label>
+            <select name="boardingPoint" id="boardingPoint">
+                <option value="boardingPoint-">Select</option>
+                <option value="100 feet road">100 feet road</option>
+                <option value="AMEERPET">AMEERPET</option>
+                <option value="AS ROA NAGAR">AS RAO NAGAR</option>
+                <option value="ASHOK NAGAR">ASHOK NAGAR</option>
+                <option value="BACHUPALLY">BACHUPALLY</option>
+                <option value="BALANAGAR(BBR HOSPITALS)">BALANAGAR(BBR HOSPITALS)</option>
+                <option value="BOLLARAM">BOLLARAM</option>
+                <option value="CARE HOSPITAL">CARE HOSPITAL</option>
+                <option value="CHANDHANAGAR">CHANDANAGAR</option>
+                <option value="CHINTAL">CHINTAL</option>
+                <option value="DARGA">DARGA</option>
+                <option value="DEVENDRANAGAR">DEVENDRANAGAR</option>
+                <option value="FOREST ACADEMY">FOREST ACADEMY</option>
+                <option value="GACHIBOWLI">GACHIBOWLI</option>
+                <option value="HAFSEEPET">HAFEESPET</option>
+                <option value="KONDAPUR">KONDAPUR</option>
+                <option value="KPHP">KPHP</option>
+                <option value="MIYAPUR">MIYAPUR</option>
+                <option value="NIZAMPET X ROAD">NIZAMPET X ROAD</option>
+                <option value="PARADISE">PARADISE</option>
+                <option value="SANGAREDDY X ROAD">SANGAREDDY X ROAD</option>
+                <option value="TARNAKA">TARNAKA</option>
+                <option value="UPPAL RING ROAD">UPPAL RING ROAD</option>
+            </select><br>
+
+            <label for="requiredForTransport">Required for (Transport):</label>
+            <select name="requiredForTransport" id="requiredForTransport">
+                <option value="-9 months-">-9 months-</option>
+                <option value="6 months">6 months</option>
+                <option value="3 months">3 months</option>
+            </select><br>
+        </div>
+
+        <input type="submit" value="Proceed" onclick="submitRequest(event)">
+    </form>
+</div>
+
+<div id="details" class="hidden"></div>
+
+</body>
+</html>
