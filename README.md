@@ -78,5 +78,3 @@ See the `LICENSE` file for details.
 
 Pull requests and improvements are welcome.
 Feel free to fork the repository and suggest changes or new features.
-
-```
